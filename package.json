@@ -1,0 +1,27 @@
+{
+  "name": "lit-tailwind-integration",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "main": "dist/my-element.es.js",
+  "exports": {
+    ".": "./dist/my-element.es.js"
+  },
+  "types": "types/my-element.d.ts",
+  "files": [
+    "dist",
+    "types"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build"
+  },
+  "dependencies": {
+    "lit": "^2.3.1"
+  },
+  "devDependencies": {
+    "@web-types/lit": "2.0.0-3",
+    "typescript": "^4.6.4",
+    "vite": "^3.1.0"
+  }
+}
