@@ -1,6 +1,7 @@
-import { LitElement, css, html } from 'lit'
+import {LitElement, css, html, unsafeCSS} from 'lit';
 import { customElement, property } from 'lit/decorators.js'
 import litLogo from './assets/lit.svg'
+import globalStyles from  './global.css?inline';
 
 /**
  * An example element.
@@ -24,7 +25,7 @@ export class MyElement extends LitElement {
 
   render() {
     return html`
-      <div>
+      <div class="flex justify-around bg-white rounded-xl shadow-xl shadow-indigo-500/40">
         <a href="https://vitejs.dev" target="_blank">
           <img src="/vite.svg" class="logo" alt="Vite logo" />
         </a>
@@ -46,7 +47,9 @@ export class MyElement extends LitElement {
     this.count++
   }
 
-  static styles = css`
+  static styles = [
+    unsafeCSS(globalStyles),
+    css`
     :host {
       max-width: 1280px;
       margin: 0 auto;
@@ -115,7 +118,7 @@ export class MyElement extends LitElement {
         background-color: #f9f9f9;
       }
     }
-  `
+  `]
 }
 
 declare global {
